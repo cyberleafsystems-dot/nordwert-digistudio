@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NORDWERT Digital Studio unterstützt Handwerksbetriebe mit professionellen Social-Media-Inhalten, Kurzvideos und Contentplanung.">
+  <meta name="theme-color" content="#142d35">
+  <title>NORDWERT Digital Studio | Mehr Sichtbarkeit für dein Handwerk</title>
+  <style>
+    :root{
+      --ink:#142d35; --ink2:#1d3b43; --sand:#d9b88f; --paper:#f7f6f2;
+      --white:#fff; --muted:#637176; --line:#e5e8e5; --green:#237b61;
+      --shadow:0 18px 55px rgba(20,45,53,.10); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    .topbar{background:var(--ink);color:#eaf0ed;font-size:.86rem;padding:9px 0;text-align:center}
+    header{position:sticky;top:0;z-index:20;background:rgba(247,246,242,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,45,53,.08)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:.09em}
+    .brandmark{width:42px;height:42px;background:var(--ink);color:var(--sand);display:grid;place-items:center;border-radius:12px;font-family:Georgia,serif;font-size:1.5rem}
+    .brand small{display:block;font-size:.65rem;letter-spacing:.2em;color:var(--muted);font-weight:700;margin-top:-4px}
+    nav{display:flex;gap:27px;align-items:center}
+    nav a{text-decoration:none;font-size:.93rem;font-weight:650;color:#405258}
+    nav a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:999px;padding:14px 22px;font-weight:750;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--sand);color:var(--ink)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 9px 25px #d9b88f66}
+    .btn-dark{background:var(--ink);color:white}
+    .btn-dark:hover{background:var(--ink2);transform:translateY(-2px)}
+    .hero{background:var(--ink);color:white;position:relative;overflow:hidden;padding:94px 0 90px}
+    .hero:after{content:"";position:absolute;width:600px;height:600px;border:1px solid #ffffff17;border-radius:50%;right:-120px;top:-270px;box-shadow:0 0 0 65px #ffffff08,0 0 0 130px #ffffff05}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--sand);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    .dot{width:7px;height:7px;background:var(--sand);border-radius:50%}
+    h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0 23px;max-width:720px}
+    h1 em{font-family:Georgia,serif;color:var(--sand);font-weight:500}
+    .hero p{font-size:1.12rem;color:#d5dfdc;max-width:590px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .hero-note{font-size:.83rem!important;color:#aebdb9!important;margin-top:20px!important}
+    .hero-card{background:#203e45;border:1px solid #ffffff20;border-radius:28px;padding:28px;box-shadow:0 30px 80px #0003;transform:rotate(1.5deg)}
+    .card-label{color:var(--sand);font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    .mock-video{margin:18px 0;background:linear-gradient(145deg,#9d9a7c,#455e55 55%,#243c40);height:245px;border-radius:18px;display:flex;align-items:end;padding:22px;position:relative;overflow:hidden}
+    .mock-video:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#102a30b8,transparent 70%)}
+    .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:#ffffffdf;color:var(--ink);display:grid;place-items:center;font-size:1.2rem}
+    .mock-caption{position:relative;font-weight:800;font-size:1.2rem;line-height:1.2}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .stat{background:#ffffff0d;border-radius:13px;padding:13px}
+    .stat strong{display:block;color:var(--sand);font-size:1.25rem}
+    .stat span{font-size:.75rem;color:#c8d3d0}
+    section{padding:88px 0}
+    .section-head{max-width:680px;margin-bottom:38px}
+    .kicker{color:var(--green);font-size:.76rem;text-transform:uppercase;letter-spacing:.17em;font-weight:850}
+    h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.045em;line-height:1.1;margin:12px 0 16px}
+    .lead{font-size:1.08rem;color:var(--muted);margin:0}
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .soft-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+    .icon{width:46px;height:46px;border-radius:14px;background:#edf2ed;display:grid;place-items:center;font-size:1.3rem;margin-bottom:17px}
+    .soft-card h3{margin:0 0 8px;font-size:1.12rem}
+    .soft-card p{margin:0;color:var(--muted);font-size:.95rem}
+    .dark-section{background:var(--ink);color:white}
+    .dark-section .kicker{color:var(--sand)}
+    .dark-section .lead{color:#c4d0cd}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .service{background:#1c3a42;border:1px solid #ffffff18;border-radius:var(--radius);padding:27px}
+    .service .num{font-size:.8rem;color:var(--sand);letter-spacing:.14em;font-weight:800}
+    .service h3{font-size:1.22rem;margin:14px 0 9px}
+    .service p{color:#c4d0cd;font-size:.94rem;margin:0}
+    .checklist{list-style:none;padding:0;margin:18px 0 0}
+    .checklist li{padding:7px 0;color:#dce5e2;font-size:.93rem}
+    .checklist li:before{content:"✓";color:var(--sand);font-weight:900;margin-right:10px}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}
+    .step{border-top:2px solid var(--sand);padding:18px 4px}
+    .step b{font-size:.78rem;color:var(--green);letter-spacing:.12em}
+    .step h3{margin:10px 0 7px;font-size:1.08rem}
+    .step p{margin:0;color:var(--muted);font-size:.92rem}
+    .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:850px}
+    .price-card{background:white;border:1px solid var(--line);border-radius:24px;padding:30px;position:relative}
+    .price-card.featured{border:2px solid var(--ink);box-shadow:var(--shadow)}
+    .tag{display:inline-block;background:#edf2ed;color:var(--green);font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:999px}
+    .price-card h3{font-size:1.4rem;margin:15px 0 2px}
+    .price{font-size:2.7rem;letter-spacing:-.06em;font-weight:850;margin:10px 0 0}
+    .price small{font-size:.95rem;color:var(--muted);letter-spacing:0;font-weight:550}
+    .price-desc{color:var(--muted);font-size:.93rem;margin:4px 0 16px}
+    .price-card .checklist li{color:#42545a}
+    .price-card .checklist li:before{color:var(--green)}
+    .price-card .btn{width:100%;margin-top:22px}
+    .fine{font-size:.8rem;color:var(--muted);margin-top:18px;max-width:850px}
+    .faq{max-width:820px}
+    details{background:white;border:1px solid var(--line);border-radius:15px;padding:18px 20px;margin:10px 0}
+    summary{font-weight:750;cursor:pointer}
+    details p{color:var(--muted);margin:12px 0 0}
+    .cta{background:#e9e5da;border-radius:28px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta h2{max-width:620px;margin-top:0}
+    .cta p{color:var(--muted);max-width:590px;margin-bottom:0}
+    footer{background:var(--ink);color:#d5dfdc;padding:48px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+    footer h3{color:white;font-size:1rem;margin:0 0 12px}
+    footer p,footer a{font-size:.88rem;color:#b9c7c3}
+    footer a{display:block;text-decoration:none;margin:7px 0}
+    footer a:hover{color:var(--sand)}
+    .copyright{border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;font-size:.78rem;color:#9eafaa}
+    .placeholder{color:#f0d4a7;font-weight:750}
+    .nav-toggle{display:none;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:11px 14px;font-weight:750;cursor:pointer}
+    .mobile-nav{display:none;padding:0 0 18px}
+    .mobile-nav a{display:block;padding:12px 4px;text-decoration:none;border-top:1px solid var(--line);font-weight:700}
+    .mobile-nav.open{display:block}
+    .contact-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .contact-form label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+    .contact-form input,.contact-form select,.contact-form textarea{width:100%;border:1px solid #d8dfdb;border-radius:12px;padding:13px 14px;font:inherit;background:#fff;color:var(--ink)}
+    .contact-form textarea{min-height:130px;resize:vertical}
+    .contact-form .full{grid-column:1/-1}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#1d9b62;color:#fff;text-decoration:none;border-radius:999px;padding:14px 18px;font-weight:800;box-shadow:0 8px 28px #0003}
+    @media(max-width:800px){
+      nav{display:none}.nav-toggle{display:inline-flex}.nav>.btn-dark{display:none}
+      .hero{padding:68px 0}.hero-grid{grid-template-columns:1fr;gap:38px}
+      .hero-card{max-width:500px}.problem-grid,.services{grid-template-columns:1fr}
+      .process{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
+      .cta{display:block;padding:32px}.cta .btn{margin-top:22px}
+      .contact-form{grid-template-columns:1fr;padding:22px}.contact-form .full{grid-column:auto}
+    }
+    @media(max-width:540px){
+      .wrap{width:min(100% - 30px,1120px)}.topbar{font-size:.75rem}
+      .hero{padding:55px 0}.hero-card{padding:18px}.mock-video{height:205px}
+      section{padding:65px 0}.pricing-grid{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Social Media & Content für Handwerksbetriebe · Klar. Verlässlich. Professionell.</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#start" aria-label="NORDWERT Startseite">
+        <span class="brandmark">N</span><span>NORDWERT<small>DIGITAL STUDIO</small></span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a><a href="#ablauf">So läuft's</a><a href="#preise">Pakete</a><a href="#faq">FAQ</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">Menü ☰</button>
+      <a class="btn btn-dark" href="#kontakt">Anfrage stellen</a>
+    </div>
+    <div class="wrap mobile-nav" id="mobileNav">
+      <a href="#leistungen">Leistungen</a><a href="leistungen.html">Leistungsdetails</a>
+      <a href="#ablauf">So läuft's</a><a href="#preise">Pakete</a><a href="pakete.html">Paketdetails</a>
+      <a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Für Handwerk & Mittelstand</div>
+          <h1>Dein Handwerk verdient <em>mehr Sichtbarkeit.</em></h1>
+          <p>Wir machen aus deinen Projektfotos und kurzen Aufnahmen professionelle Social-Media-Inhalte. Damit dein Betrieb online einen starken Eindruck hinterlässt – ohne dass du dich selbst um jeden Beitrag kümmern musst.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Unverbindlich anfragen&nbsp; →</a>
+            <a class="btn" style="border:1px solid #ffffff55;color:white" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <p class="hero-note">Du lieferst das Material. Wir übernehmen Schnitt, Texte und Planung.</p>
+        </div>
+        <div class="hero-card">
+          <div class="card-label">So kann dein Content aussehen</div>
+          <div class="mock-video">
+            <div class="play">▶</div>
+            <div class="mock-caption">Aus guter Arbeit<br>wird guter Content.</div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Video</strong><span>Kurze Formate</span></div>
+            <div class="stat"><strong>Text</strong><span>Passende Captions</span></div>
+            <div class="stat"><strong>Plan</strong><span>Klare Struktur</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Weniger Aufwand für dich</div>
+          <h2>Du kümmerst dich um deine Aufträge. Wir um deinen Content.</h2>
+          <p class="lead">Im Handwerk fehlt im Alltag oft die Zeit, regelmäßig Inhalte zu planen, zu schneiden und zu veröffentlichen. Genau hier unterstützen wir.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="soft-card"><div class="icon">⏱</div><h3>Keine Zeit für Social Media?</h3><p>Aus deinem vorhandenen Material entstehen planbare Beiträge, ohne dass du jeden Abend selbst schneiden musst.</p></article>
+          <article class="soft-card"><div class="icon">📱</div><h3>Unregelmäßige Beiträge?</h3><p>Mit einem Redaktionsplan erhält dein Auftritt eine klare Struktur und einen verlässlichen Rhythmus.</p></article>
+          <article class="soft-card"><div class="icon">🛠</div><h3>Gute Arbeit sichtbar machen</h3><p>Zeige Projekte, Arbeitsabläufe und Ergebnisse – verständlich aufbereitet für deine Zielgruppe.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="leistungen">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Unsere Leistungen</div>
+          <h2>Content, der deinen Betrieb professionell präsentiert.</h2>
+          <p class="lead">Wir arbeiten mit Bildern und Videos, die du bereitstellst, und bereiten sie für deine Social-Media-Kanäle auf.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="num">01 / VIDEO</div><h3>Kurzvideos & Reels</h3><p>Wir schneiden kurze, aufmerksamkeitsstarke Videos aus deinem freigegebenen Material.</p><ul class="checklist"><li>Schnitt und Formatierung</li><li>Untertitel und Texteinblendungen</li><li>Musik nur mit geeigneter Lizenz</li></ul></article>
+          <article class="service"><div class="num">02 / TEXTE</div><h3>Texte & Beiträge</h3><p>Zu jedem Inhalt entwickeln wir verständliche Texte und passende Handlungsaufforderungen.</p><ul class="checklist"><li>Beitragstexte</li><li>Überschriften und Ideen</li><li>Hashtag-Vorschläge</li></ul></article>
+          <article class="service"><div class="num">03 / PLANUNG</div><h3>Content-Planung</h3><p>Du erhältst eine übersichtliche Planung, welche Inhalte wann veröffentlicht werden können.</p><ul class="checklist"><li>Monatsübersicht</li><li>Abstimmung und Freigabe</li><li>Übergabe der fertigen Inhalte</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Einfacher Ablauf</div>
+          <h2>In vier Schritten zu deinem Content.</h2>
+          <p class="lead">Du behältst die Kontrolle über dein Material und gibst die Inhalte vor der Veröffentlichung frei.</p>
+        </div>
+        <div class="process">
+          <div class="step"><b>SCHRITT 01</b><h3>Kennenlernen</h3><p>Wir sprechen über deinen Betrieb, deine Ziele und deine Kanäle.</p></div>
+          <div class="step"><b>SCHRITT 02</b><h3>Material teilen</h3><p>Du stellst passende Fotos und kurze Videos bereit.</p></div>
+          <div class="step"><b>SCHRITT 03</b><h3>Produktion</h3><p>Wir schneiden, texten und planen deine Inhalte.</p></div>
+          <div class="step"><b>SCHRITT 04</b><h3>Freigabe</h3><p>Du prüfst die Entwürfe. Erst nach Freigabe werden sie veröffentlicht oder übergeben.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preise" style="background:#efeee8">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Transparente Pakete</div>
+          <h2>Das passende Paket für deinen Betrieb.</h2>
+          <p class="lead">Ein klarer Leistungsumfang und ein fester monatlicher Preis. Wir klären vor dem Start gemeinsam, was zu deinem Betrieb passt.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="tag">Zum Einstieg</span>
+            <h3>Social Start</h3>
+            <div class="price">499 € <small>/ Monat</small></div>
+            <p class="price-desc">Für Betriebe, die regelmäßig mit Content starten möchten.</p>
+            <ul class="checklist"><li>8 Kurzvideos pro Monat</li><li>8 passende Beitragstexte</li><li>Untertitel und Videoschnitt</li><li>Monatlicher Content-Plan</li><li>Eine Korrekturrunde je Inhalt</li></ul>
+            <a class="btn btn-dark" href="#kontakt" data-package="Social Start">Social Start anfragen</a>
+          </article>
+          <article class="price-card featured">
+            <span class="tag">Mehr Inhalte</span>
+            <h3>Social Pro</h3>
+            <div class="price">899 € <small>/ Monat</small></div>
+            <p class="price-desc">Für Betriebe, die ihren Auftritt konsequent ausbauen möchten.</p>
+            <ul class="checklist"><li>12 Kurzvideos pro Monat</li><li>12 passende Beitragstexte</li><li>Untertitel und Videoschnitt</li><li>Monatlicher Redaktionsplan</li><li>Monatliche Inhaltsauswertung</li><li>Eine Korrekturrunde je Inhalt</li></ul>
+            <a class="btn btn-primary" href="#kontakt" data-package="Social Pro">Social Pro anfragen</a>
+          </article>
+        </div>
+        <p class="fine">Alle Preise sind als Endkundenpreise/Angebotspreise noch steuerlich zu prüfen und vor Veröffentlichung korrekt auszuzeichnen. Dreharbeiten vor Ort, Anzeigenbudget, Anzeigenverwaltung, Community-Management und zusätzliche Korrekturen sind nicht enthalten. Vertragslaufzeit, Zahlungsbedingungen und Kündigungsfrist werden im individuellen Angebot festgelegt. Umsatzsteuerliche Behandlung bitte vor Livegang festlegen.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap faq">
+        <div class="section-head">
+          <div class="kicker">Häufige Fragen</div>
+          <h2>Was du vor dem Start wissen solltest.</h2>
+        </div>
+        <details><summary>Muss ich selbst Videos drehen?</summary><p>Du musst keine fertigen Videos produzieren. Du stellst uns geeignete Fotos und kurze Aufnahmen aus deinem Betrieb zur Verfügung. Daraus erstellen wir die vereinbarten Inhalte. Ob und wie viel Material benötigt wird, stimmen wir vorher ab.</p></details>
+        <details><summary>Auf welchen Plattformen kann der Content genutzt werden?</summary><p>Die Kurzvideos werden für die vereinbarten Kanäle und Formate vorbereitet, zum Beispiel Instagram, Facebook oder TikTok. Die konkreten Plattformen legen wir gemeinsam fest.</p></details>
+        <details><summary>Wer gibt die Beiträge frei?</summary><p>Du erhältst die Entwürfe zur Prüfung. Veröffentlicht wird erst nach deiner Freigabe, sofern die Veröffentlichung Teil des vereinbarten Auftrags ist.</p></details>
+        <details><summary>Garantiert ihr mehr Kunden oder Reichweite?</summary><p>Nein. Reichweite und Anfragen hängen von vielen Faktoren ab. Wir versprechen einen klar definierten Produktions- und Betreuungsumfang, aber keine bestimmten Ergebnisse.</p></details>
+        <details><summary>Kann ich zunächst unverbindlich sprechen?</summary><p>Ja. Sende uns eine Anfrage mit ein paar Informationen zu deinem Betrieb. Wir klären zunächst, ob und wie eine Zusammenarbeit sinnvoll sein könnte.</p></details>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Unverbindliche Anfrage</div>
+          <h2>Erzähl uns von deinem Betrieb.</h2>
+          <p class="lead">Wähle dein Wunschpaket und sende uns die wichtigsten Informationen. Dein E-Mail-Programm öffnet sich mit einer vorausgefüllten Anfrage.</p>
+        </div>
+        <form class="contact-form" id="inquiryForm">
+          <div><label for="company">Unternehmen</label><input id="company" name="company" autocomplete="organization" required></div>
+          <div><label for="person">Ansprechpartner</label><input id="person" name="person" autocomplete="name" required></div>
+          <div><label for="email">E-Mail-Adresse</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="phone">Telefon (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="full"><label for="package">Gewünschtes Paket</label><select id="package" name="package" required>
+            <option value="">Bitte auswählen</option><option>Social Start – 499 € / Monat</option>
+            <option>Social Pro – 899 € / Monat</option><option>Individuelles Angebot</option>
+            <option>Ich bin noch unentschlossen</option></select></div>
+          <div class="full"><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Branche, Social-Media-Kanäle, Ziele oder offene Fragen …"></textarea></div>
+          <div class="full"><button class="btn btn-dark" type="submit">Anfrage per E-Mail vorbereiten →</button></div>
+          <p class="fine full">Die Angaben werden in eine neue E-Mail übernommen. Es erfolgt keine automatische Serverübermittlung; du musst die E-Mail selbst absenden. Empfängeradresse vor Veröffentlichung ergänzen.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#start" style="color:white"><span class="brandmark">N</span><span>NORDWERT<small style="color:#b9c7c3">DIGITAL STUDIO</small></span></a>
+          <p>Social-Media-Inhalte und Contentplanung für Handwerksbetriebe.</p>
+        </div>
+        <div><h3>Navigation</h3><a href="#leistungen">Leistungen</a><a href="#ablauf">So läuft's</a><a href="#preise">Pakete</a><a href="#kontakt">Kontakt</a></div>
+        <div><h3>Rechtliches</h3><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzerklärung</a><p style="font-size:.76rem">Diese Seiten müssen vor Veröffentlichung mit deinen echten Unternehmensdaten und den tatsächlich eingesetzten Diensten vervollständigt werden.</p></div>
+      </div>
+      <div class="copyright">© <span id="year"></span> NORDWERT Digital Studio. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+  <a class="whatsapp" id="whatsappLink" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  <script>
+    const SITE_EMAIL = 'DEINE-EMAIL@BEISPIEL.DE'; // durch echte Geschäftsadresse ersetzen
+    const WHATSAPP_NUMBER = '491701234567'; // Beispielnummer ersetzen: Ländervorwahl + Nummer, nur Ziffern
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Schließen ✕' : 'Menü ☰';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Menü ☰';
+    }));
+    document.querySelectorAll('[data-package]').forEach(link => link.addEventListener('click', () => {
+      document.getElementById('package').value = link.dataset.package === 'Social Start' ? 'Social Start – 499 € / Monat' : 'Social Pro – 899 € / Monat';
+    }));
+    document.getElementById('inquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const d = new FormData(event.currentTarget);
+      const subject = 'Anfrage an NORDWERT Digital Studio – ' + d.get('package');
+      const body = ['Hallo NORDWERT Digital Studio,', '',
+        'Paket: ' + d.get('package'), 'Unternehmen: ' + d.get('company'),
+        'Ansprechpartner: ' + d.get('person'), 'E-Mail: ' + d.get('email'),
+        'Telefon: ' + (d.get('phone') || 'Keine Angabe'), '',
+        'Nachricht:', d.get('message') || 'Keine weitere Nachricht'].join('\\n');
+      window.location.href = 'mailto:' + SITE_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+    document.getElementById('whatsappLink').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' +
+      encodeURIComponent('Hallo NORDWERT Digital Studio, ich interessiere mich für eure Leistungen.');
+  </script>
+</body>
+</html>
